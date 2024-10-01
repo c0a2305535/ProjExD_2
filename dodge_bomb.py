@@ -60,6 +60,9 @@ def main():
     gob_img.set_alpha(128)
     pg.draw.rect(gob_img, (0, 0, 0), pg.Rect(0, 0, 800, 1600))
     fonto = pg.font.Font(None, 80)
+    """
+    ゲームオーバー画面の詳細設定
+    """
     txt = fonto.render("GameOver", True, (255, 255, 255))
     cry_kk_img = pg.image.load("fig/8.png")
 
@@ -76,7 +79,7 @@ def main():
         if kk_rct.colliderect(bb_rct):  # こうかとんと爆弾が重なっていたら
             screen.blit(gob_img, (0, 0))
             screen.blit(txt, [420, 280])
-            screen.blit(cry_kk_img, (360, 280))
+            screen.blit(cry_kk_img, (360, 280))#こうかとんをゲームオーバー画面に表示
             screen.blit(cry_kk_img, (730, 280))
             pg.display.flip()
             time.sleep(5)
